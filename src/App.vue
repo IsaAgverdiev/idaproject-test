@@ -1,7 +1,14 @@
-<template></template>
+<template>
+  <Main />
+</template>
 
 <script>
-export default {};
+import Main from "@/pages/Main.vue";
+export default { components: { Main } };
 </script>
 
-<style></style>
+<style lang="scss">
+@import "@/styles/main.scss";
+
+
+</style>
