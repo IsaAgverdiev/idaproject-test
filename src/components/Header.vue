@@ -21,7 +21,7 @@ export default {};
 @import "@/styles/main.scss";
 
 .header {
-  padding: 30px 15px;
+  padding: 30px 0;
 
   &__inner {
     display: flex;
@@ -32,7 +32,7 @@ export default {};
   &__filter {
     display: inline-block;
     font-size: 12px;
-    color: $text-palceholder;
+    color: $text-placeholder;
     max-width: 122px;
     width: 100%;
     height: 36px;
@@ -40,6 +40,7 @@ export default {};
     border-radius: 4px;
     border: 1px solid #b4b4b4;
     outline: none;
+    font-family: "Source Sans Pro", sans-serif;
 
     -webkit-appearance: none;
     -moz-appearance: none;
