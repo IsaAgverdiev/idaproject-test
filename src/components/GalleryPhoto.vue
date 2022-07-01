@@ -1,9 +1,14 @@
 <template>
-  <div class="gallery">gallery</div>
+  <div class="gallery">
+    <div class="gallery__inner">
+      <PhotoCard />
+    </div>
+  </div>
 </template>
 
 <script>
-export default {};
+import PhotoCard from "./PhotoCard.vue";
+export default { components: { PhotoCard } };
 </script>
 
 <style lang="scss">

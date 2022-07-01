@@ -41,15 +41,16 @@ export default {};
   padding: 24px;
   margin-right: 15px;
   border-radius: 4px;
-  filter: drop-shadow(0px 20px 30px rgba(0, 0, 0, 0.04)) drop-shadow(0px 6px 10px rgba(0, 0, 0, 0.02));
+  filter: drop-shadow(0px 20px 30px rgba(0, 0, 0, 0.04))
+    drop-shadow(0px 6px 10px rgba(0, 0, 0, 0.02));
   background: #fff;
 
   &__item {
     display: flex;
     flex-direction: column;
     justify-content: start;
-  filter: drop-shadow(0px 20px 30px rgba(0, 0, 0, 0.04)) drop-shadow(0px 6px 10px rgba(0, 0, 0, 0.02));
-
+    filter: drop-shadow(0px 20px 30px rgba(0, 0, 0, 0.04))
+      drop-shadow(0px 6px 10px rgba(0, 0, 0, 0.02));
   }
 
   &__item + &__item {
@@ -67,7 +68,7 @@ export default {};
     &::after {
       content: "";
       position: absolute;
-      top:0;
+      top: 0;
       width: 4px;
       height: 4px;
       background: $red;
@@ -80,12 +81,12 @@ export default {};
     border-radius: 4px;
     height: 36px;
     border: none;
-    transition:0,3s;
+    transition: 0, 3s;
   }
 
   &__input:focus {
     outline: 1px solid $text-placeholder;
-    transition:0,3s;
+    transition: 0, 3s;
   }
 
   &__input::placeholder {
