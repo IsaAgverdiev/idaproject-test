@@ -1,25 +1,23 @@
 <template>
   <div class="photo-card card">
     <div class="card__img-wrap">
-      <img
-        src="https://st.kp.yandex.net/images/film_iphone/iphone360_574182.jpg"
-        class="card__img"
-      />
+      <img :src="photo.src" class="card__img" />
     </div>
     <div class="card__inner">
-      <h2 class="card__title">Наименование товара</h2>
+      <h2 class="card__title">{{ photo.title }}</h2>
       <p class="card__text">
-        Довольно-таки интересное описание товара в несколько строк.
-        Довольно-таки интересное описание товара в несколько строк
+        {{ photo.text }}
       </p>
-      <p class="card__price">10 000 руб.</p>
+      <p class="card__price">{{ photo.price }}</p>
     </div>
     <button class="card__delete-btn"></button>
   </div>
 </template>
 
 <script>
-export default {};
+export default {
+  props: ["photo"],
+};
 </script>
 
 <style lang="scss">
@@ -32,6 +30,8 @@ export default {};
   background: #fff;
   position: relative;
   transition: 0.3s;
+  filter: drop-shadow(0px 20px 30px rgba(0, 0, 0, 0.04))
+    drop-shadow(0px 6px 10px rgba(0, 0, 0, 0.02));
 
   &__inner {
     display: flex;
@@ -44,6 +44,7 @@ export default {};
   &__img-wrap {
     width: 100%;
     height: 200px;
+    background: #eee;
   }
 
   &__img {
