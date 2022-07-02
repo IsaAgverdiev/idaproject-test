@@ -46,7 +46,9 @@
         v-model="price"
         type="number"
         class="form__input"
-        :class="{ showError: showError.price }"
+        :class="{
+          showError: showError.price,
+        }"
         placeholder="Введите цену"
       />
       <label
@@ -83,7 +85,7 @@ export default {
       if (this.title !== "" && this.src !== "" && this.price !== "") {
         let photo = {
           title: this.title,
-          text: this.text,
+          text: this.text ? this.text : "Описание отсутсует!",
           src: this.src,
           price: this.price,
           id: new Date(),
@@ -132,7 +134,7 @@ export default {
       this.showError.src = false;
       this.activateBtn();
     },
-    price: function () {
+    price: function (val) {
       this.showError.price = false;
       this.activateBtn();
     },

@@ -1,14 +1,14 @@
 <template>
   <div class="photo-card card">
     <div class="card__img-wrap">
-      <img :src="photo.src" class="card__img" />
+      <img :src="photo.src" @error="setAltImg" class="card__img" />
     </div>
     <div class="card__inner">
       <h2 class="card__title">{{ photo.title }}</h2>
       <p class="card__text">
         {{ photo.text }}
       </p>
-      <p class="card__price">{{ photo.price }}</p>
+      <p class="card__price">{{ priceStr }}</p>
     </div>
     <button
       class="card__delete-btn"
@@ -20,6 +20,20 @@
 <script>
 export default {
   props: ["photo"],
+
+  computed: {
+    priceStr: function () {
+      let price = this.photo.price;
+      return price.toLocaleString("ru") + " ₽";
+    },
+  },
+
+  methods: {
+    setAltImg(e) {
+      e.target.src =
+        "https://notarius-goncharov.ru/wp-content/uploads/2019/04/placeholder.png";
+    },
+  },
 };
 </script>
 
@@ -69,7 +83,8 @@ export default {
     font-family: "Source Sans Pro", sans-serif;
     color: $text-color;
     overflow: hidden;
-    margin: 0;
+    margin: 0 0 auto 0;
+    // margin-bottom: auto;
   }
 
   &__price {

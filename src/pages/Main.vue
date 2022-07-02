@@ -23,7 +23,7 @@ export default {
           src: "https://st.kp.yandex.net/images/film_iphone/iphone360_574182.jpg",
           title: "Наименование товара",
           text: "Довольно-таки интересное описание товара в несколько строк. Довольнотаки интересное описание товара в несколько строк",
-          price: "10 000 руб.",
+          price: 10000,
           id: new Date(),
         },
       ],
