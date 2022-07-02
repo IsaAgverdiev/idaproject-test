@@ -1,8 +1,13 @@
 <template>
   <div class="gallery">
-    <div class="gallery__inner">
-      <PhotoCard v-for="photo in photos" :key="photo.id" :photo="photo" />
-    </div>
+    <transition-group name="list" tag="div" class="gallery__inner">
+      <PhotoCard
+        v-for="photo in photos"
+        :key="photo.id"
+        :photo="photo"
+        @deletePhoto="deletePhoto"
+      />
+    </transition-group>
   </div>
 </template>
 
@@ -16,7 +21,11 @@ export default {
     return {};
   },
 
-  methods: {},
+  methods: {
+    deletePhoto(photoID) {
+      this.$emit("photoDelete", photoID);
+    },
+  },
 };
 </script>
 

@@ -4,7 +4,7 @@
     <div class="container">
       <div class="main__inner">
         <FormAddPhoto @addPhoto="addPhoto" />
-        <GalleryPhoto :photos="this.photos" />
+        <GalleryPhoto :photos="this.photos" @photoDelete="deletePhoto" />
       </div>
     </div>
   </section>
@@ -33,6 +33,12 @@ export default {
   methods: {
     addPhoto(photo) {
       this.photos.push(photo);
+    },
+
+    deletePhoto(photoID) {
+      this.photos = this.photos.filter(function (card) {
+        return card.id !== photoID;
+      });
     },
   },
 };

@@ -10,7 +10,10 @@
       </p>
       <p class="card__price">{{ photo.price }}</p>
     </div>
-    <button class="card__delete-btn"></button>
+    <button
+      class="card__delete-btn"
+      @click="$emit('deletePhoto', photo.id)"
+    ></button>
   </div>
 </template>
 

@@ -90,6 +90,11 @@ export default {
         };
 
         this.$emit("addPhoto", photo);
+
+        this.title = "";
+        this.text = "";
+        this.src = "";
+        this.price = "";
       } else {
         this.showErrors();
       }
