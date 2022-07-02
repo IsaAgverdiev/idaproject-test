@@ -1,6 +1,9 @@
 <template>
   <div class="gallery">
     <transition-group name="list" tag="div" class="gallery__inner">
+      <h1 v-if="!photos.length">
+        Фотокарточки отсутсвую! Добавьте карточку, используя форму
+      </h1>
       <PhotoCard
         v-for="photo in photos"
         :key="photo.id"
