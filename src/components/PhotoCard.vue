@@ -6,7 +6,7 @@
     <div class="card__inner">
       <h2 class="card__title">{{ photo.title }}</h2>
       <p class="card__text">
-        {{ photo.text }}
+        {{ slisedText }}
       </p>
       <p class="card__price">{{ priceStr }}</p>
     </div>
@@ -26,6 +26,17 @@ export default {
       let price = this.photo.price;
       return price.toLocaleString("ru") + " ₽";
     },
+
+    slisedText: function () {
+      let sliced = this.photo.text.slice(0, 150);
+      let slicedText = "";
+      if (sliced.length < this.photo.text.length) {
+        slicedText = sliced += "...";
+      } else {
+        slicedText = this.photo.text;
+      }
+      return slicedText;
+    },
   },
 
   methods: {
@@ -43,7 +54,8 @@ export default {
 .card {
   max-width: 332px;
   width: 100%;
-  min-height: 423px;
+  min-height: 440px;
+  border-radius: 4px;
   background: #fff;
   position: relative;
   transition: 0.3s;
@@ -54,6 +66,7 @@ export default {
     display: flex;
     height: calc(100% - 200px);
     flex-direction: column;
+    border-radius: 4px 4px 0 0;
     justify-content: space-between;
     padding: 16px;
   }
@@ -61,12 +74,15 @@ export default {
   &__img-wrap {
     width: 100%;
     height: 200px;
+    border-radius: 4px 4px 0 0;
+
     background: #eee;
   }
 
   &__img {
     width: 100%;
     height: 100%;
+    border-radius: 4px 4px 0 0;
     object-fit: cover;
   }
 

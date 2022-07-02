@@ -3,10 +3,10 @@
     <div class="container">
       <div class="header__inner">
         <h1 class="header__title title">Добавление товара</h1>
-        <select class="header__filter filter">
-          <option value="По-умолчанию">По-умолчанию</option>
-          <option value="По цене min">По цене min</option>
-          <option value="По цене max">По цене max</option>
+        <select class="header__filter filter" @change="onChange">
+          <option value="default" selected>По-умолчанию</option>
+          <option value="min">По цене min</option>
+          <option value="max">По цене max</option>
         </select>
       </div>
     </div>
@@ -14,7 +14,13 @@
 </template>
 
 <script>
-export default {};
+export default {
+  methods: {
+    onChange(event) {
+      this.$emit("filtred", event.target.value);
+    },
+  },
+};
 </script>
 
 <style lang="scss">
